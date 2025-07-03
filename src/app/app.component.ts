@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { GoogleSigninComponent } from './google-signin.component'; // adjust path if needed
 import { loadGapiInsideDOM } from 'gapi-script';
+import { CommonModule } from '@angular/common'; // 👈 Add this!
+
+import { GoogleSigninComponentComponent } from './google-signin-component/google-signin-component.component'; // ✅ this one probably does
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, GoogleSigninComponent],
+  imports: [CommonModule,RouterOutlet, GoogleSigninComponentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
